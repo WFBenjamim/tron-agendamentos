@@ -1,103 +1,124 @@
-import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, CalendarDays, MessageCircle, Sparkles } from "lucide-react";
+
+const benefits = [
+  {
+    title: "Agende sem complicacao",
+    text: "Seu cliente escolhe o melhor horario em poucos toques, direto pelo link da sua barbearia.",
+    icon: CalendarDays,
+  },
+  {
+    title: "Mais tempo para atender",
+    text: "Menos mensagens repetidas, menos confusao na agenda e mais foco nos cortes do dia.",
+    icon: Sparkles,
+  },
+  {
+    title: "Pensado para WhatsApp",
+    text: "Compartilhe seu link com facilidade e deixe seus clientes sempre perto da sua agenda.",
+    icon: MessageCircle,
+  },
+];
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main className="min-h-svh px-5 py-6">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between rounded-[8px] border border-border bg-surface/70 px-4 py-3 backdrop-blur">
+        <Link className="font-display text-lg font-bold uppercase" href="/">
+          Tron Agendamento
+        </Link>
+        <div className="flex items-center gap-2">
+          <Link
+            className="tron-focus hidden rounded-[6px] px-4 py-2 text-sm font-medium text-muted transition hover:text-foreground sm:inline-flex"
+            href="/login"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            Login
+          </Link>
+          <Link
+            className="tron-focus tron-accent-cta inline-flex min-h-11 items-center gap-2 rounded-[6px] px-4 py-2 text-sm font-extrabold transition"
+            href="/cadastro"
           >
-            Read our docs
-          </a>
+            Comecar
+            <ArrowRight size={16} />
+          </Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </nav>
+
+      <section className="mx-auto grid max-w-7xl items-end gap-10 pb-16 pt-24 lg:min-h-[78svh] lg:grid-cols-[1.05fr_0.95fr]">
+        <div>
+          <p className="mb-5 font-mono-data text-sm uppercase text-accent">
+            Sistema de agenda para barbearias
+          </p>
+          <h1 className="font-display max-w-4xl text-6xl font-bold leading-[0.9] text-foreground sm:text-7xl lg:text-8xl">
+            O horario certo, no corte certo.
+          </h1>
+          <p className="mt-8 max-w-2xl text-lg leading-8 text-muted">
+            O sistema mais pratico do mercado para sua barbearia receber
+            agendamentos, organizar o dia e vender mais sem perder tempo no
+            celular.
+          </p>
+          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+            <Link
+              className="tron-focus tron-accent-cta inline-flex min-h-12 items-center justify-center gap-2 rounded-[6px] px-6 font-extrabold transition"
+              href="/cadastro"
+            >
+              Criar minha barbearia
+              <ArrowRight size={18} />
+            </Link>
+            <Link
+              className="tron-focus inline-flex min-h-12 items-center justify-center rounded-[6px] border border-border px-6 font-bold text-foreground transition hover:border-accent"
+              href="/login"
+            >
+              Ja tenho conta
+            </Link>
+          </div>
+        </div>
+
+        <div className="rounded-[8px] border border-border bg-surface/85 p-4 shadow-2xl shadow-black/30">
+          <div className="rounded-[6px] border border-border bg-background/70 p-5">
+            <div className="mb-6 flex items-center justify-between">
+              <span className="font-display text-xl font-bold">
+                Agenda de hoje
+              </span>
+              <span className="tron-accent-cta rounded-[6px] px-3 py-1 font-mono-data text-xs font-extrabold">
+                +18%
+              </span>
+            </div>
+            <div className="space-y-3">
+              {["09:00 Corte social", "10:30 Barba + cabelo", "14:00 Combo"].map(
+                (item) => (
+                  <div
+                    className="flex min-h-14 items-center justify-between rounded-[6px] border border-border bg-surface px-4"
+                    key={item}
+                  >
+                    <span className="font-mono-data text-sm text-foreground">
+                      {item}
+                    </span>
+                    <span className="size-2 rounded-full bg-accent" />
+                  </div>
+                ),
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto grid max-w-7xl gap-4 pb-20 md:grid-cols-3">
+        {benefits.map((benefit) => {
+          const Icon = benefit.icon;
+          return (
+            <article
+              className="rounded-[8px] border border-border bg-surface/75 p-6 transition duration-300 hover:border-accent/60 hover:shadow-[0_0_40px_rgba(200,255,0,0.08)]"
+              key={benefit.title}
+            >
+              <Icon className="mb-8 text-accent" size={26} />
+              <h2 className="font-display text-2xl font-bold">
+                {benefit.title}
+              </h2>
+              <p className="mt-4 leading-7 text-muted">{benefit.text}</p>
+            </article>
+          );
+        })}
+      </section>
+    </main>
   );
 }
